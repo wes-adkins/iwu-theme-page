@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Business at IWU | Indiana Wesleyan University</title>
+  <meta name="description" content="Explore Business programs at Indiana Wesleyan University—programs, faculty, facilities, student stories, and next steps." />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* IWU primary */
+    :root {
+      --bs-primary: #a6192e;
+      --bs-primary-rgb: 166, 25, 46;
+      --bs-link-color: #a6192e;
+      --bs-link-hover-color: #7f1323;
+    }
+
+    /* Optional: lightweight theme styling (safe to remove if your site has global styles) */
+    .hero {
+      background: linear-gradient(90deg, rgba(0,0,0,.60), rgba(0,0,0,.15)),
+                  url("images/banner.png") center/cover no-repeat;
+      color: #fff;
+    }
+    .hero .badge { background: rgba(255,255,255,.14); }
+    .section-kicker { letter-spacing: .08em; text-transform: uppercase; font-size: .82rem; color: var(--bs-secondary); }
+    .card-hover { transition: transform .15s ease, box-shadow .15s ease; }
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.08); }
+    .pill {
+      display: inline-block;
+      padding: .35rem .65rem;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--bs-primary) 12%, transparent);
+      color: var(--bs-primary);
+      font-weight: 600;
+      font-size: .86rem;
+    }
+    .avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; background: #e9ecef; }
+    .anchor-offset { scroll-margin-top: 92px; }
+    .program-tags .badge { font-weight: 600; }
+
+    /* Make "blue" UI accents IWU red (links, focus rings, buttons) */
+    /* Force primary buttons to IWU red (Bootstrap CDN keeps blue unless overridden) */
+    .btn-primary {
+      --bs-btn-color: #fff;
+      --bs-btn-bg: var(--bs-primary);
+      --bs-btn-border-color: var(--bs-primary);
+      --bs-btn-hover-color: #fff;
+      --bs-btn-hover-bg: #8f1628;
+      --bs-btn-hover-border-color: #8f1628;
+      --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+      --bs-btn-active-color: #fff;
+      --bs-btn-active-bg: #7f1323;
+      --bs-btn-active-border-color: #7f1323;
+    }
+
+    a { color: var(--bs-link-color); }
+    a:hover { color: var(--bs-link-hover-color); }
+    .btn-link { color: var(--bs-link-color); }
+    .btn-link:hover { color: var(--bs-link-hover-color); }
+
+    .form-control:focus,
+    .form-select:focus,
+    .btn:focus,
+    .btn:focus-visible {
+      border-color: var(--bs-primary);
+      box-shadow: 0 0 0 .25rem rgba(var(--bs-primary-rgb), .25);
+    }
+
+    .btn-outline-secondary {
+      --bs-btn-color: var(--bs-primary);
+      --bs-btn-border-color: var(--bs-primary);
+      --bs-btn-hover-color: #fff;
+      --bs-btn-hover-bg: var(--bs-primary);
+      --bs-btn-hover-border-color: var(--bs-primary);
+      --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+      --bs-btn-active-color: #fff;
+      --bs-btn-active-bg: var(--bs-primary);
+      --bs-btn-active-border-color: var(--bs-primary);
+    }
+
+    /* Optional: tighten nav link color */
+    nav.sticky-top a { color: var(--bs-primary); }
+    nav.sticky-top a:hover { color: var(--bs-link-hover-color); }
+    a { color: var(--bs-link-color); }
+    a:hover { color: var(--bs-link-hover-color); }
+    .btn-link { color: var(--bs-link-color); }
+    .btn-link:hover { color: var(--bs-link-hover-color); }
+
+    .form-control:focus,
+    .form-select:focus,
+    .btn:focus,
+    .btn:focus-visible {
+      border-color: var(--bs-primary);
+      box-shadow: 0 0 0 .25rem rgba(var(--bs-primary-rgb), .25);
+    }
+
+    .btn-outline-secondary {
+      --bs-btn-color: var(--bs-primary);
+      --bs-btn-border-color: var(--bs-primary);
+      --bs-btn-hover-color: #fff;
+      --bs-btn-hover-bg: var(--bs-primary);
+      --bs-btn-hover-border-color: var(--bs-primary);
+      --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+      --bs-btn-active-color: #fff;
+      --bs-btn-active-bg: var(--bs-primary);
+      --bs-btn-active-border-color: var(--bs-primary);
+    }
+
+    /* Optional: tighten nav link color */
+    nav.sticky-top a { color: var(--bs-primary); }
+    nav.sticky-top a:hover { color: var(--bs-link-hover-color); }
+
+    /* Stats tiles */
+    .stat {
+      border-radius: 1rem;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.08);
+      height: 100%;
+    }
+    .stat .num { font-size: 2rem; font-weight: 800; letter-spacing: -.02em; color: var(--bs-primary); }
+    .stat .label { font-weight: 700; }
+    .stat .note { color: var(--bs-secondary); font-size: .9rem; }
+
+    /* Video placeholder */
+    .video-tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      min-height: 360px;
+      background: #111;
+    }
+    .video-tile img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .9; }
+    .video-tile .overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.55));
+    }
+    .video-tile .play {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: 84px; height: 84px; border-radius: 999px;
+      background: rgba(255,255,255,.92);
+      display: grid; place-items: center;
+      box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.25);
+    }
+    .video-tile .play:before {
+      content: "";
+      width: 0; height: 0;
+      border-left: 18px solid var(--bs-primary);
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
+    }
+    .video-tile .caption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 1.25rem;
+      color: #fff;
+    }
+    .video-tile .caption .small { color: rgba(255,255,255,.8); }
+  </style>
+</head>
+
+<body>
+  <!-- Top utility strip (optional) -->
+  <div class="bg-light border-bottom py-2">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-2">
+        <img src="https://www.indwes.edu/_img/header-footer/logo-mobile1.svg" alt="Indiana Wesleyan University" style="height: 28px; width: auto;" />
+        <div class="small text-muted d-none d-md-block">Indiana Wesleyan University</div>
+      </div>
+      <div class="d-flex gap-2">
+        <a class="btn btn-sm btn-outline-secondary" href="#programs">Programs</a>
+        <a class="btn btn-sm btn-outline-secondary" href="#stories">Student Stories</a>
+        <a class="btn btn-sm btn-primary" href="#next-steps">Request Info</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero py-5">
+    <div class="container py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <div class="d-flex gap-2 mb-3 flex-wrap">
+            <span class="badge rounded-pill">Business</span>
+            <span class="badge rounded-pill">Undergraduate</span>
+            <span class="badge rounded-pill">Graduate</span>
+            <span class="badge rounded-pill">Online + On-Campus</span>
+          </div>
+
+          <h1 class="display-5 fw-bold">Business at IWU</h1>
+          <p class="lead mt-3">
+            Build the skills to lead with excellence and integrity—through career-ready programs,
+            hands-on learning, and faculty who invest in your growth.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a href="#programs" class="btn btn-primary btn-lg">Explore Programs</a>
+            <a href="#next-steps" class="btn btn-outline-light btn-lg">Talk to an Advisor</a>
+            <a href="#why-iwu" class="btn btn-link btn-lg text-white">Why IWU →</a>
+          </div>
+
+          <div class="mt-4 d-flex flex-wrap gap-3">
+            <span class="pill">Faith-integrated leadership</span>
+            <span class="pill">Applied learning</span>
+            <span class="pill">Career preparation</span>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <!-- Quick info card -->
+          <div class="bg-white text-dark rounded-4 p-4 shadow-lg">
+            <div class="section-kicker mb-1">Quick facts</div>
+            <h2 class="h5 fw-bold mb-3">Plan your next step</h2>
+
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="p-3 rounded-3 border h-100">
+                  <div class="fw-bold">Formats</div>
+                  <div class="text-muted small">On-campus • Online • Hybrid</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 rounded-3 border h-100">
+                  <div class="fw-bold">Levels</div>
+                  <div class="text-muted small">Associate • Bachelor’s • Master’s • Doctorate</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="p-3 rounded-3 border bg-light">
+                  <div class="fw-bold">Not sure where to start?</div>
+                  <div class="text-muted small">Explore programs by interest area or degree level below.</div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+            <div class="d-grid gap-2">
+              <a href="#next-steps" class="btn btn-primary">Request Information</a>
+              <a href="#" class="btn btn-outline-secondary">Apply</a>
+              <a href="#" class="btn btn-link">Visit Campus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION NAV (sticky) -->
+  <nav class="sticky-top bg-white border-bottom">
+    <div class="container">
+      <div class="d-flex gap-3 py-3 flex-wrap">
+        <a class="text-decoration-none" href="#stats">Stats</a>
+        <a class="text-decoration-none" href="#why-iwu">Why IWU</a>
+        <a class="text-decoration-none" href="#programs">Programs</a>
+        <a class="text-decoration-none" href="#outcomes">Outcomes</a>
+        <a class="text-decoration-none" href="#stories">Student Stories</a>
+        <a class="text-decoration-none" href="#faculty">Faculty</a>
+        <a class="text-decoration-none" href="#facilities">Facilities</a>
+        <a class="text-decoration-none" href="#next-steps">Next Steps</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- STATS (inspired by GCU-style "by the numbers") -->
+  <section id="stats" class="py-5 anchor-offset">
+    <div class="container">
+      <div class="row g-4 align-items-end">
+        <div class="col-lg-5">
+          <div class="section-kicker">Business by the numbers</div>
+          <h2 class="fw-bold mb-2">A snapshot of opportunity</h2>
+          <p class="text-muted mb-0">
+            Use this section for quick, scannable proof points (IWU outcomes, program breadth, experiential learning).
+            Replace placeholders with verified IWU stats.
+          </p>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <div class="stat p-3 p-md-4">
+                <div class="num">14+</div>
+                <div class="label">Business programs</div>
+                <div class="note">Associate–Doctorate</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat p-3 p-md-4">
+                <div class="num">XX%</div>
+                <div class="label">Career outcomes</div>
+                <div class="note">Placement/advancement</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat p-3 p-md-4">
+                <div class="num">XX+</div>
+                <div class="label">Employer partners</div>
+                <div class="note">Internships & hiring</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat p-3 p-md-4">
+                <div class="num">$X.XM</div>
+                <div class="label">Scholarships</div>
+                <div class="note">Annual support</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 text-muted small">
+            Optional: add a small footnote line with sources (Career Services report, Institutional Research, etc.).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IWU -->
+  <section id="why-iwu" class="py-5 anchor-offset">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-5">
+          <div class="section-kicker">Why business at IWU</div>
+          <h2 class="display-6 fw-bold">Lead with skill. Lead with purpose.</h2>
+          <p class="mt-3 text-muted">
+            Use this area for your strongest differentiators: faith integration, mentorship, applied learning,
+            and career preparation.
+          </p>
+
+          <div class="mt-4 d-flex flex-column gap-3">
+            <div class="d-flex gap-3">
+              <div class="flex-shrink-0"><span class="badge text-bg-primary rounded-pill p-2">1</span></div>
+              <div>
+                <div class="fw-bold">Applied learning</div>
+                <div class="text-muted">Case studies, projects, and real-world problem solving.</div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-3">
+              <div class="flex-shrink-0"><span class="badge text-bg-primary rounded-pill p-2">2</span></div>
+              <div>
+                <div class="fw-bold">Faculty mentorship</div>
+                <div class="text-muted">Accessible professors who help you chart your path.</div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-3">
+              <div class="flex-shrink-0"><span class="badge text-bg-primary rounded-pill p-2">3</span></div>
+              <div>
+                <div class="fw-bold">Values-driven leadership</div>
+                <div class="text-muted">Develop ethical decision-making and integrity-focused leadership.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card h-100 card-hover rounded-4">
+                <div class="card-body p-4">
+                  <div class="fw-bold">Career-ready skill set</div>
+                  <p class="text-muted mt-2 mb-0">Finance, strategy, analytics, management, marketing, and communication.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100 card-hover rounded-4">
+                <div class="card-body p-4">
+                  <div class="fw-bold">Flexibility</div>
+                  <p class="text-muted mt-2 mb-0">Options for traditional students and working adults (online/hybrid).</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100 card-hover rounded-4">
+                <div class="card-body p-4">
+                  <div class="fw-bold">Professional network</div>
+                  <p class="text-muted mt-2 mb-0">Alumni, mentors, and regional connections that open doors.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100 card-hover rounded-4">
+                <div class="card-body p-4">
+                  <div class="fw-bold">Support that scales</div>
+                  <p class="text-muted mt-2 mb-0">Advising, coaching, and career support from day one.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="p-4 rounded-4 border bg-light">
+                <div class="fw-bold">Optional promo module</div>
+                <div class="text-muted">Use for upcoming events, speaker series, competitions, or featured stories.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS (TAILORED TO IWU LIST) -->
+  <section id="programs" class="py-5 bg-light anchor-offset">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+        <div>
+          <div class="section-kicker">Programs</div>
+          <h2 class="fw-bold mb-0">Find your business pathway</h2>
+          <p class="text-muted mt-2 mb-0">Browse by degree level and format. (Links go to current IWU program pages.)</p>
+        </div>
+
+        <!-- Optional: filter UI (non-functional placeholder) -->
+        <div class="d-flex gap-2">
+          <select class="form-select" aria-label="Filter by level" style="max-width: 220px;">
+            <option selected>All levels</option>
+            <option>Associate</option>
+            <option>Bachelor’s</option>
+            <option>Master’s</option>
+            <option>Doctorate</option>
+          </select>
+          <select class="form-select" aria-label="Filter by format" style="max-width: 220px;">
+            <option selected>All formats</option>
+            <option>On-campus</option>
+            <option>Online</option>
+            <option>Hybrid</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Undergraduate (On-Campus) -->
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+        <h3 class="h5 fw-bold mb-0">On-campus undergraduate programs</h3>
+        <div class="text-muted small">Marion campus</div>
+      </div>
+
+      <div class="row g-3">
+        <!-- BA Business Administration -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div class="fw-bold">B.A. Business Administration</div>
+                  <div class="text-muted small">Bachelor’s • On-campus</div>
+                </div>
+                <span class="badge text-bg-secondary">Core</span>
+              </div>
+              <p class="mt-3 text-muted">Build broad business foundations with coursework spanning key functional areas and leadership skills.</p>
+              <div class="program-tags d-flex flex-wrap gap-2 mb-3">
+                <span class="badge text-bg-light border">Leadership</span>
+                <span class="badge text-bg-light border">Strategy</span>
+                <span class="badge text-bg-light border">Career prep</span>
+              </div>
+              <a href="https://www.indwes.edu/program/division-of-business/ba-business-administration" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BA Accounting -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">B.A. Accounting</div>
+              <div class="text-muted small">Bachelor’s • On-campus</div>
+              <p class="mt-3 text-muted">Prepare for careers in accounting with a strong foundation in principles, ethics, and business applications.</p>
+              <a href="https://www.indwes.edu/program/division-of-business/ba-accounting" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BA Finance -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">B.A. Finance</div>
+              <div class="text-muted small">Bachelor’s • On-campus</div>
+              <p class="mt-3 text-muted">Develop specialized knowledge in modern financial issues and core skills for the financial industry.</p>
+              <a href="https://www.indwes.edu/program/division-of-business/ba-finance" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BA Marketing -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">B.A. Marketing</div>
+              <div class="text-muted small">Bachelor’s • On-campus</div>
+              <p class="mt-3 text-muted">Gain foundational and specialized skills aligned with modern marketing roles—traditional and digital.</p>
+              <a href="https://www.indwes.edu/program/division-of-business/ba-marketing" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BA Management -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">B.A. Management</div>
+              <div class="text-muted small">Bachelor’s • On-campus</div>
+              <p class="mt-3 text-muted">Prepare for leadership roles by developing confidence to lead and essential administrative skills.</p>
+              <a href="https://www.indwes.edu/program/division-of-business/ba-management" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BA Entrepreneurship -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">B.A. Entrepreneurship</div>
+              <div class="text-muted small">Bachelor’s • On-campus</div>
+              <p class="mt-3 text-muted">Explore new venture creation, small business management, and entrepreneurial finance.</p>
+              <a href="https://www.indwes.edu/program/division-of-business/ba-entrepreneurship" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BS Economics -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">B.S. Economics</div>
+              <div class="text-muted small">Bachelor’s • On-campus</div>
+              <p class="mt-3 text-muted">Study economic research, forecasting, analysis, and business-focused problem solving.</p>
+              <a href="https://www.indwes.edu/program/division-of-business/bs-economics" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- AS Business Administration -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">A.S. Business Administration</div>
+              <div class="text-muted small">Associate • On-campus</div>
+              <p class="mt-3 text-muted">A strong foundation in key business principles—ideal for launching a career or continuing to a bachelor’s.</p>
+              <a href="https://www.indwes.edu/program/division-of-business/as-business-administration" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-5" />
+
+      <!-- Online & Hybrid (CAPS) -->
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+        <h3 class="h5 fw-bold mb-0">Online & hybrid programs</h3>
+        <div class="text-muted small">Designed for working adults</div>
+      </div>
+
+      <div class="row g-3">
+        <!-- Online AS Business -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div class="fw-bold">A.S. Business</div>
+                  <div class="text-muted small">Associate • Online</div>
+                </div>
+                <span class="badge text-bg-secondary">Online</span>
+              </div>
+              <p class="mt-3 text-muted">Build business essentials online as a launching pad toward your goals.</p>
+              <a href="https://www.indwes.edu/program/as-business/" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Online AS Accounting -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">A.S. Accounting</div>
+              <div class="text-muted small">Associate • Online</div>
+              <p class="mt-3 text-muted">Start toward accounting and finance roles with an online associate degree.</p>
+              <a href="https://www.indwes.edu/program/as-accounting/" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Online BS Business Administration -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">B.S. Business Administration</div>
+              <div class="text-muted small">Bachelor’s • Online/Onsite options</div>
+              <p class="mt-3 text-muted">A flexible business degree for professional growth, leadership development, and broad career pathways.</p>
+              <div class="program-tags d-flex flex-wrap gap-2 mb-3">
+                <span class="badge text-bg-light border">Human Resources (option)</span>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.indwes.edu/program/bs-business-administration/" class="btn btn-outline-primary">View program</a>
+                <a href="https://www.indwes.edu/program/bs-business-administration/human-resource-management/" class="btn btn-outline-secondary">HR specialization</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Online BS Management -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">B.S. Management</div>
+              <div class="text-muted small">Bachelor’s • Online</div>
+              <p class="mt-3 text-muted">An intensive program for practicing professionals preparing for analyst, sales, and operations roles.</p>
+              <a href="https://www.indwes.edu/program/bs-management/" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Online BS Marketing (specializations) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">B.S. Marketing</div>
+              <div class="text-muted small">Bachelor’s • Online</div>
+              <p class="mt-3 text-muted">Develop digital marketing skills and choose a focus area that fits your career goals.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.indwes.edu/program/bs-marketing/marketing-analytics/" class="btn btn-outline-primary">Marketing Analytics</a>
+                <a href="https://www.indwes.edu/program/bs-marketing/digital-media-business-strategies/" class="btn btn-outline-secondary">Digital Media Strategies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MBA -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div class="fw-bold">Master of Business Administration (MBA)</div>
+                  <div class="text-muted small">Master’s • Online/Onsite options</div>
+                </div>
+                <span class="badge text-bg-secondary">Graduate</span>
+              </div>
+              <p class="mt-3 text-muted">Advance toward management and executive-level roles with an MBA designed for working adults.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.indwes.edu/program/mba/" class="btn btn-outline-primary">View MBA</a>
+                <a href="https://www.indwes.edu/program/mba/project-management/" class="btn btn-outline-secondary">MBA: Project Management</a>
+              </div>
+              <div class="mt-2">
+                <a class="btn btn-sm btn-link" href="https://www.indwes.edu/program/mba/school-administration/">MBA: School Administration</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Executive MBA -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">Executive MBA (eMBA)</div>
+              <div class="text-muted small">Master’s • Online</div>
+              <p class="mt-3 text-muted">A cutting-edge MBA designed for experienced professionals focused on strategic leadership and innovation.</p>
+              <a href="https://www.indwes.edu/program/executive-mba/" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Associate to MBA -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">Associate to MBA</div>
+              <div class="text-muted small">Accelerated pathway • Online</div>
+              <p class="mt-3 text-muted">Start with an associate credential and build directly toward an MBA with a streamlined pathway.</p>
+              <a href="https://www.indwes.edu/program/mba/associate-mba/" class="btn btn-outline-primary">View pathway</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- MS Accounting (specializations) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">M.S. Accounting (specializations)</div>
+              <div class="text-muted small">Master’s • Online</div>
+              <p class="mt-3 text-muted">Customize your master’s in accounting with a specialization aligned to your career goals.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.indwes.edu/program/ms-accounting/financial-accounting/" class="btn btn-outline-primary">Financial</a>
+                <a href="https://www.indwes.edu/program/ms-accounting/managerial-accounting/" class="btn btn-outline-secondary">Managerial</a>
+                <a href="https://www.indwes.edu/program/ms-accounting/public-accounting/" class="btn btn-outline-secondary">Public</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MS Human Resource Management -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">M.S. Human Resource Management</div>
+              <div class="text-muted small">Master’s • Online</div>
+              <p class="mt-3 text-muted">Develop the skills to lead HR strategy, talent development, and organizational success.</p>
+              <a href="https://www.indwes.edu/program/ms-human-resource-management/" class="btn btn-outline-primary">View program</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- DBA -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 card-hover rounded-4">
+            <div class="card-body p-4">
+              <div class="fw-bold">Doctor of Business Administration (DBA)</div>
+              <div class="text-muted small">Doctorate • Online</div>
+              <p class="mt-3 text-muted">Advance to top-level roles with doctoral study in business administration and specialization options.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.indwes.edu/program/dba/management/" class="btn btn-outline-primary">Management</a>
+                <a href="https://www.indwes.edu/program/dba/data-analytics/" class="btn btn-outline-secondary">Data Analytics</a>
+                <a href="https://www.indwes.edu/program/dba/completion/" class="btn btn-outline-secondary">Completion</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-4 text-center">
+        <a href="https://www.indwes.edu/academics/caps/devoe-school-of-business-technology-and-leadership/division-of-business/" class="btn btn-primary btn-lg">Explore Business (Online & Hybrid)</a>
+        <a href="https://www.indwes.edu/academics/cas/school-of-professional-studies/division-of-business/" class="btn btn-outline-secondary btn-lg ms-2">Explore Business (On-campus)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES / CAREERS -->
+  <section id="outcomes" class="py-5 anchor-offset">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <div class="section-kicker">Outcomes</div>
+          <h2 class="fw-bold">Turn learning into impact</h2>
+          <p class="text-muted mt-3">Use this space for outcomes metrics (internship participation, career placement, grad school, etc.).</p>
+
+          <div class="row g-3 mt-1">
+            <div class="col-sm-6">
+              <div class="p-4 rounded-4 border h-100">
+                <div class="fw-bold">Career readiness</div>
+                <div class="text-muted small">Add a business-specific KPI.</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-4 rounded-4 border h-100">
+                <div class="fw-bold">Applied experience</div>
+                <div class="text-muted small">Projects, simulations, internships.</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-4 rounded-4 border h-100">
+                <div class="fw-bold">Leadership formation</div>
+                <div class="text-muted small">Values-driven decision-making.</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-4 rounded-4 border h-100">
+                <div class="fw-bold">Professional network</div>
+                <div class="text-muted small">Mentors, alumni, employers.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <div class="fw-bold mb-2">Common career paths</div>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge text-bg-light border">Marketing</span>
+              <span class="badge text-bg-light border">Finance</span>
+              <span class="badge text-bg-light border">Accounting</span>
+              <span class="badge text-bg-light border">Operations</span>
+              <span class="badge text-bg-light border">HR</span>
+              <span class="badge text-bg-light border">Entrepreneurship</span>
+              <span class="badge text-bg-light border">Analytics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 p-lg-5 rounded-4 bg-light border">
+            <div class="section-kicker">Employer & alumni module</div>
+            <h3 class="h4 fw-bold">Where IWU business students go</h3>
+            <p class="text-muted">Add curated employer logos and/or alumni outcomes. Keep current and specific.</p>
+
+            <div class="row g-3 mt-2">
+              <div class="col-4"><div class="bg-white border rounded-3 p-3 text-center small">Logo</div></div>
+              <div class="col-4"><div class="bg-white border rounded-3 p-3 text-center small">Logo</div></div>
+              <div class="col-4"><div class="bg-white border rounded-3 p-3 text-center small">Logo</div></div>
+              <div class="col-4"><div class="bg-white border rounded-3 p-3 text-center small">Logo</div></div>
+              <div class="col-4"><div class="bg-white border rounded-3 p-3 text-center small">Logo</div></div>
+              <div class="col-4"><div class="bg-white border rounded-3 p-3 text-center small">Logo</div></div>
+            </div>
+
+            <div class="mt-4">
+              <a href="#next-steps" class="btn btn-primary">Connect with an advisor</a>
+              <a href="#" class="btn btn-outline-secondary ms-2">Explore internships</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDENT STORIES / TESTIMONIALS -->
+  <section id="stories" class="py-5 bg-light anchor-offset">
+    <div class="container">
+      <div class="section-kicker">Student stories</div>
+      <h2 class="fw-bold mb-4">Hear from IWU business students</h2>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Left: testimonial cards (left aligned, 2-up) -->
+        <div class="col-12 col-lg-6">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <div class="card h-100 rounded-4 card-hover">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <img class="avatar" src="https://via.placeholder.com/112?text=Student" alt="Student headshot placeholder">
+                    <div>
+                      <div class="fw-bold">Student Name</div>
+                      <div class="text-muted small">Program • Year</div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0">“Add a short testimonial with a concrete outcome (internship, mentorship, leadership growth).”</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="card h-100 rounded-4 card-hover">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <img class="avatar" src="https://via.placeholder.com/112?text=Student" alt="Student headshot placeholder">
+                    <div>
+                      <div class="fw-bold">Student Name</div>
+                      <div class="text-muted small">Program • Year</div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0">“Keep these punchy (1–2 sentences). Link to the full story or video.”</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="card h-100 rounded-4 card-hover">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <img class="avatar" src="https://via.placeholder.com/112?text=Student" alt="Student headshot placeholder">
+                    <div>
+                      <div class="fw-bold">Student Name</div>
+                      <div class="text-muted small">Program • Year</div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0">“Include a mix: traditional undergrad, online adult learner, grad student, etc.”</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="card h-100 rounded-4 card-hover">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <img class="avatar" src="https://via.placeholder.com/112?text=Student" alt="Student headshot placeholder">
+                    <div>
+                      <div class="fw-bold">Student Name</div>
+                      <div class="text-muted small">Program • Year</div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0">“Add one more story that emphasizes calling, values, and career direction.”</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 d-flex flex-wrap gap-2">
+            <a href="#" class="btn btn-primary">Read more stories</a>
+            <a href="#" class="btn btn-outline-secondary">Watch video testimonials</a>
+          </div>
+        </div>
+
+        <!-- Right: featured video placeholder -->
+        <div class="col-12 col-lg-6">
+          <a href="#" class="text-decoration-none" aria-label="Play featured student testimonial video">
+            <div class="video-tile shadow-sm">
+              <img src="https://via.placeholder.com/1200x900?text=Student+Testimonial+Video" alt="Video placeholder image">
+              <div class="overlay"></div>
+              <div class="play" aria-hidden="true"></div>
+              <div class="caption">
+                <div class="fw-bold">Featured student testimonial</div>
+                <div class="small">2–3 minutes • Business at IWU</div>
+              </div>
+            </div>
+          </a>
+          <div class="mt-3 text-muted small">
+            Tip: swap the image for a real video thumbnail and link to YouTube/Vimeo or your CMS video module.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACULTY SPOTLIGHTS -->
+  <section id="faculty" class="py-5 anchor-offset">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-5">
+          <div class="section-kicker">Faculty</div>
+          <h2 class="fw-bold">Learn from practitioners and mentors</h2>
+          <p class="text-muted mt-3">Feature 2–4 faculty members with consistent headshots and brief impact statements.</p>
+          <a href="#" class="btn btn-outline-primary">Meet all Business faculty</a>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card rounded-4 card-hover h-100">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <img class="avatar" src="https://via.placeholder.com/112?text=Faculty" alt="Faculty headshot placeholder">
+                    <div>
+                      <div class="fw-bold">Dr. Faculty Name</div>
+                      <div class="text-muted small">Title • Area (e.g., Finance)</div>
+                    </div>
+                  </div>
+                  <p class="mt-3 text-muted mb-0">1–2 lines: expertise + how they mentor students.</p>
+                  <div class="mt-3">
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Faculty bio</a>
+                    <a href="#" class="btn btn-sm btn-outline-primary ms-2">Spotlight story</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card rounded-4 card-hover h-100">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <img class="avatar" src="https://via.placeholder.com/112?text=Faculty" alt="Faculty headshot placeholder">
+                    <div>
+                      <div class="fw-bold">Prof. Faculty Name</div>
+                      <div class="text-muted small">Title • Area (e.g., Marketing)</div>
+                    </div>
+                  </div>
+                  <p class="mt-3 text-muted mb-0">Keep spotlights consistent so this template scales to other subject pages.</p>
+                  <div class="mt-3">
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Faculty bio</a>
+                    <a href="#" class="btn btn-sm btn-outline-primary ms-2">Spotlight story</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES / RESOURCES -->
+  <section id="facilities" class="py-5 bg-light anchor-offset">
+    <div class="container">
+      <div class="section-kicker">Facilities & resources</div>
+      <h2 class="fw-bold mb-4">Spaces that support learning</h2>
+
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <img class="img-fluid rounded-4 shadow-sm" src="https://via.placeholder.com/1400x800?text=Facilities+Photo" alt="Facilities photo placeholder">
+        </div>
+
+        <div class="col-lg-5">
+          <div class="d-flex flex-column gap-3">
+            <div class="p-4 rounded-4 bg-white border">
+              <div class="fw-bold">Collaboration spaces</div>
+              <div class="text-muted">Describe labs, classrooms, project spaces, and tech used in business courses.</div>
+            </div>
+            <div class="p-4 rounded-4 bg-white border">
+              <div class="fw-bold">Career services</div>
+              <div class="text-muted">Resume and interview prep, networking, internships, and job search support.</div>
+            </div>
+            <div class="p-4 rounded-4 bg-white border">
+              <div class="fw-bold">Student organizations</div>
+              <div class="text-muted">Clubs, case competitions, and leadership development opportunities.</div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <a href="#" class="btn btn-primary">Schedule a visit</a>
+            <a href="#" class="btn btn-outline-secondary ms-2">Explore campus life</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / NEXT STEPS -->
+  <section id="next-steps" class="py-5 anchor-offset">
+    <div class="container">
+      <div class="p-4 p-lg-5 rounded-4 bg-primary text-white">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <div class="section-kicker text-white-50">Next steps</div>
+            <h2 class="fw-bold">Ready to explore Business at IWU?</h2>
+            <p class="mb-0 text-white-75">Swap these CTAs to match your primary conversion goal for this theme page.</p>
+          </div>
+          <div class="col-lg-5">
+            <div class="d-grid gap-2">
+              <a href="#" class="btn btn-light btn-lg">Request Information</a>
+              <a href="#" class="btn btn-outline-light btn-lg">Apply Now</a>
+              <a href="#" class="btn btn-link text-white text-decoration-none">Contact Admissions →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-4">
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 border">
+            <h3 class="h5 fw-bold">Request info (embed your form)</h3>
+            <p class="text-muted mb-0">Replace this block with your form embed or CMS component.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 border bg-light">
+            <h3 class="h5 fw-bold">Helpful links</h3>
+            <ul class="mb-0">
+              <li><a href="#">Tuition &amp; financial aid</a></li>
+              <li><a href="#">Transfer credit</a></li>
+              <li><a href="#">Meet your admissions counselor</a></li>
+              <li><a href="#">Visit options</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-5 bg-dark text-white">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="fw-bold">Indiana Wesleyan University</div>
+          <div class="text-white-50 small">Business Theme Page Template</div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="text-white-50 text-decoration-none me-3" href="#programs">Programs</a>
+          <a class="text-white-50 text-decoration-none me-3" href="#stories">Stories</a>
+          <a class="text-white-50 text-decoration-none" href="#next-steps">Next Steps</a>
+        </div>
+      </div>
+      <hr class="border-secondary my-4">
+      <div class="text-white-50 small">© IWU • Replace with your standard footer component</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
